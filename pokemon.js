@@ -26,35 +26,80 @@ function Pokemon(name,  attack, defense, health, type) {
   };
   this.attackOpponent = function (opponent){
     //   This should:
-    //      Grab the opponents defense
-    //      Subtract it from the attacker's attack.
-    //      Update the defense with the difference (This is the Damage) 
-    //      Return the new defense
-    return opponent
+    //     [x]  Grab the opponents defense
+    //     [x]  Subtract it from the attacker's attack to get the difference (this is the damage points)
+    //     [x]  Call the opponent.takeDamage with the damage points as an arguement.
+    //     [x]  Return the opponents health
+    //     [x]  Account for cases where defense is greater than the attack
+    var damage;
+    if (this.attack > opponent.defense){ // Determined the damaged points by the opponense defense from the attackers attack save it in a variable 
+        damage = this.attack - opponent.defense; // call the opponents takeDamage with the newly determined damage points as an arguement 
+        opponent.takeDamage(damage);
+      return opponent.health
+    }
+    else {
+        return opponent.health = opponent.health - 1; // this can be refactored to opponent.takeDamage(1)
+    }
+    
+
+   
+  };
+  this.display = function(){
+    //   This should return a tring with the:
+    //      []`.name` in all caps
+    //      []`.type` in all caps and parenthesis
+    //      []`.health` with a forward-slash "/"
+    //      [] followed by the `.health` the `Pokemon` was initialized with
+
+ 
   }
     }
 
-    const charmander = new Pokemon("Charmander", 100, 110, 130, "fire");
+    var charmander = new Pokemon("Charmander", 100, 110, 130, "fire");
 
 ///////////////
 // Task #2 - `takeDamage()` Method
-//  [] - Implement a `takeDamage()` method for the `Pokemon` class which takes 
+//  [x] - Implement a `takeDamage()` method for the `Pokemon` class which takes 
 //  a number as an argument and reduces the `.health` of the `Pokemon` by 
 //  that number.
 /////////////// 
 
 
-const squirtle = new Pokemon('Squirtle', 110, 100, 120, 'water');
-squirtle.takeDamage(20);
-// squirtle.takeDamage(100000);
-// squirtle.health;
+var squirtle = new Pokemon('Squirtle', 110, 100, 120, 'water');
+
 
 ///////////////
-// Task #3 - `takeDamage()` Method
+// Task #2.1 - `takeDamage()` Method
+//  [x] - should have a method called takeDamage() which takes 
+//  a number as an argument and reduces the health 
+//  of the pokemon who called it by that number.
+/////////////// 
+
+squirtle.takeDamage(20);
+squirtle.takeDamage(100000);
+// squirtle.health;
+
+
+///////////////
+// Task #3 - `attackOpponent()` Method
 //  [] - Implement an `attackOpponent()` method for the `Pokemon` class 
 //  which takes a `Pokemon` object as an argument (the opponent being attacked). 
 //  This method should call the `takeDamage()` method of the opposing `Pokemon` and provide the appropriate damage as an argument.
 /////////////// 
+
+charmander = new Pokemon("Charmander", 100, 110, 130, "fire");
+squirtle = new Pokemon('Squirtle', 110, 100, 100, 'water');
+
+charmander.attackOpponent(squirtle);
+
+///////////////
+// Task #4 - `display()` Method
+//  [] - Implement a `display()` method for the `Pokemon` class which takes no 
+//  arguments and returns a string with the Pokemon's `.name` in all caps, `.type` 
+//  in all caps and in parenthesis, and `.health` with a forward-slash, " / ", followed by the `.health` the `Pokemon` was initialized with.
+/////////////// 
+
+
 
 
 
