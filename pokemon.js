@@ -47,17 +47,15 @@ function Pokemon(name,  attack, defense, health, type) {
   };
   this.display = function(){
     //   This should return a tring with the:
-    //      []`.name` in all caps
-    //      []`.type` in all caps and parenthesis
-    //      []`.health` with a forward-slash "/"
-    //      [] followed by the `.health` the `Pokemon` was initialized with
+    //      [x]`.name` in all caps
+    //      [x]`.type` in all caps and parenthesis
+    //      [x]`.health` with a forward-slash "/"
+    //      [x] followed by the `.health` the `Pokemon` was initialized with
 
     nameUp = this.name.toUpperCase();
     typeUp = this.type.toUpperCase();
     currentHealth = this.health;
-   initHealth = this.initHealth
-
-
+    initHealth = this.initHealth;
 
     return `${nameUp} (${typeUp}) ${currentHealth}/${initHealth}`
   }
@@ -85,7 +83,6 @@ var squirtle = new Pokemon('Squirtle', 110, 100, 120, 'water');
 
 squirtle.takeDamage(20);
 squirtle.takeDamage(100000);
-// squirtle.health;
 
 
 ///////////////
@@ -110,9 +107,6 @@ charmander.attackOpponent(squirtle);
 
 const bulbasaur = new Pokemon("bulbasaur", 7, 9, 35, "grass/poison");
 bulbasaur.display()
-
-
-
 
 
 // Don't edit this line!
