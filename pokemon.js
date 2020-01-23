@@ -1,19 +1,9 @@
 // Your code here!
 ///////////////
 // Task1 
-//  [] - Construct and initialize a `Pokemon` object by passing in 5 arguments 
+//  [x] - Construct and initialize a `Pokemon` object by passing in 5 arguments 
 //  that corresponds to the following 5 properties in order: `.name`, `.attack`, `.defense`, `.health`, and `.type`.
 /////////////// 
-
-
-// var Pokemon = new Object();
-
-// Pokemon.name = "charmander";
-// Pokemon.attack = 12;
-// Pokemon.defense = 8;
-// Pokemon.health = 30; 
-// Pokemon.type = "fire";
-
 
 function Pokemon(name,  attack, defense, health, type) {
     this.name = name;
