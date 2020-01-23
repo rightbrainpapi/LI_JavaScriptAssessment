@@ -12,6 +12,7 @@ function Pokemon(name,  attack, defense, health, type) {
     this.defense = defense;
     this.health = health;
     this.type = type;
+    this.initHealth = health
     this.takeDamage =  function (number) {
         // Check if health is less than number.
         if(this.health < number){
@@ -51,7 +52,14 @@ function Pokemon(name,  attack, defense, health, type) {
     //      []`.health` with a forward-slash "/"
     //      [] followed by the `.health` the `Pokemon` was initialized with
 
- 
+    nameUp = this.name.toUpperCase();
+    typeUp = this.type.toUpperCase();
+    currentHealth = this.health;
+   initHealth = this.initHealth
+
+
+
+    return `${nameUp} (${typeUp}) ${currentHealth}/${initHealth}`
   }
     }
 
@@ -100,7 +108,8 @@ charmander.attackOpponent(squirtle);
 /////////////// 
 
 
-
+const bulbasaur = new Pokemon("bulbasaur", 7, 9, 35, "grass/poison");
+bulbasaur.display()
 
 
 
