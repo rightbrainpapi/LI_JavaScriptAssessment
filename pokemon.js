@@ -13,14 +13,20 @@ function Pokemon(name,  attack, defense, health, type) {
     this.health = health;
     this.type = type;
     this.takeDamage =  function (number) {
+        // Check if health is less than number.
         if(this.health < number){
+            // if less than return health as 0.
             return this.health = 0
         }else{
+            // if not return the precise difference
             return this.health = this.health - number;
         }
    
 
   };
+//   this.attackOpponent = function (){
+//     //   This should 
+//   }
     }
 
     const charmander = new Pokemon("Charmander", 100, 110, 130, "fire");
@@ -38,9 +44,12 @@ squirtle.takeDamage(20);
 squirtle.takeDamage(100000);
 squirtle.health;
 
-// this.takeDamage =  function (number) {
-//     return this.health - number;
-//   };
+///////////////
+// Task #3 - `takeDamage()` Method
+//  [] - Implement a `takeDamage()` method for the `Pokemon` class which takes 
+//  a number as an argument and reduces the `.health` of the `Pokemon` by 
+//  that number.
+/////////////// 
 
 
 // Don't edit this line!
