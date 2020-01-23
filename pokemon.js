@@ -24,9 +24,14 @@ function Pokemon(name,  attack, defense, health, type) {
    
 
   };
-//   this.attackOpponent = function (){
-//     //   This should 
-//   }
+  this.attackOpponent = function (opponent){
+    //   This should:
+    //      Grab the opponents defense
+    //      Subtract it from the attacker's attack.
+    //      Update the defense with the difference (This is the Damage) 
+    //      Return the new defense
+    return opponent
+  }
     }
 
     const charmander = new Pokemon("Charmander", 100, 110, 130, "fire");
@@ -41,15 +46,19 @@ function Pokemon(name,  attack, defense, health, type) {
 
 const squirtle = new Pokemon('Squirtle', 110, 100, 120, 'water');
 squirtle.takeDamage(20);
-squirtle.takeDamage(100000);
-squirtle.health;
+// squirtle.takeDamage(100000);
+// squirtle.health;
 
 ///////////////
 // Task #3 - `takeDamage()` Method
-//  [] - Implement a `takeDamage()` method for the `Pokemon` class which takes 
-//  a number as an argument and reduces the `.health` of the `Pokemon` by 
-//  that number.
+//  [] - Implement an `attackOpponent()` method for the `Pokemon` class 
+//  which takes a `Pokemon` object as an argument (the opponent being attacked). 
+//  This method should call the `takeDamage()` method of the opposing `Pokemon` and provide the appropriate damage as an argument.
 /////////////// 
+
+
+
+
 
 
 // Don't edit this line!
